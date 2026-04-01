@@ -80,6 +80,7 @@ public class Examples {
         prepayments.put(LocalDate.of(2024, 1, 6), new BigDecimal("180000"));
         prepayments.put(LocalDate.of(2024, 4, 2), new BigDecimal("200000"));
         prepayments.put(LocalDate.of(2024, 9, 3), new BigDecimal("200000"));
+        prepayments.put(LocalDate.of(2025, 2, 18), new BigDecimal("228000"));
 
         // 假设首次还款时间为 2022年4月24日
         LocalDate startDate = LocalDate.of(2022, 4, 24);
@@ -129,6 +130,7 @@ public class Examples {
         prepayments.put(LocalDate.of(2024, 1, 6), new BigDecimal("180000"));
         prepayments.put(LocalDate.of(2024, 4, 2), new BigDecimal("200000"));
         prepayments.put(LocalDate.of(2024, 9, 3), new BigDecimal("200000"));
+        prepayments.put(LocalDate.of(2025, 2, 18), new BigDecimal("228000"));
 
         LocalDate startDate = LocalDate.of(2022, 4, 24);
 
@@ -162,18 +164,20 @@ public class Examples {
         // 利率变化（公积金）
         TreeMap<LocalDate, BigDecimal> interestRatesHPF = new TreeMap<>();
         interestRatesHPF.put(LocalDate.of(2022, 1, 1), new BigDecimal("0.03575").divide(new BigDecimal(12), MortgageCalculator.SCALE, RoundingMode.HALF_UP));
-        interestRatesHPF.put(LocalDate.of(2025, 1, 1), new BigDecimal("0.03075").divide(new BigDecimal(12), MortgageCalculator.SCALE, RoundingMode.HALF_UP));
+        interestRatesHPF.put(LocalDate.of(2025, 1, 1), new BigDecimal("0.03325").divide(new BigDecimal(12), MortgageCalculator.SCALE, RoundingMode.HALF_UP));
+        interestRatesHPF.put(LocalDate.of(2026, 1, 1), new BigDecimal("0.03075").divide(new BigDecimal(12), MortgageCalculator.SCALE, RoundingMode.HALF_UP));
 
         // 月供金额变化
         TreeMap<LocalDate, BigDecimal> fixedPayments = new TreeMap<>();
         fixedPayments.put(LocalDate.of(2022, 1, 1), new BigDecimal("2461"));
-        fixedPayments.put(LocalDate.of(2025, 8, 1), new BigDecimal("2000"));
-        fixedPayments.put(LocalDate.of(2026, 8, 1), new BigDecimal("500"));
+        fixedPayments.put(LocalDate.of(2025, 5, 1), new BigDecimal("3500"));
+//        fixedPayments.put(LocalDate.of(2026, 1, 1), new BigDecimal("5000"));
 
         // 假设在以下时间节点进行了提前还款
         TreeMap<LocalDate, BigDecimal> prepaymentsHPF = new TreeMap<>();
-        prepaymentsHPF.put(LocalDate.of(2025, 8, 1), new BigDecimal("200000"));
-        prepaymentsHPF.put(LocalDate.of(2026, 8, 1), new BigDecimal("300000"));
+//        prepaymentsHPF.put(LocalDate.of(2025, 3, 1), new BigDecimal("100000"));
+        prepaymentsHPF.put(LocalDate.of(2026, 1, 1), new BigDecimal("100000"));
+//        prepaymentsHPF.put(LocalDate.of(2026, 4, 1), new BigDecimal("200000"));
 
         LocalDate startDate = LocalDate.of(2022, 4, 24);
 
